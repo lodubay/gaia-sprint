@@ -1,8 +1,0 @@
-select gaia.source_id, gaia.ra, gaia.dec, xmatch.original_ext_source_id, params.*
-from gaiadr3.tmass_psc_xsc_best_neighbour as xmatch
-join user_ldubay.apogee_tmass_ids as u
-on xmatch.original_ext_source_id=u.col1
-join gaiadr3.gaia_source as gaia
-on gaia.source_id=xmatch.source_id
-join gaiadr3.astrophysical_parameters as params
-on params.source_id=gaia.source_id
